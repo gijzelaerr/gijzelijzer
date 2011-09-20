@@ -39,9 +39,9 @@ ENDIF()
 # Set what to compile how
 #-------------------------------------------------------------------------------
 SET(GIJZELIJZER_SOURCE
-    src/vstxsynth.cpp
-    src/vstxsynthproc.cpp
-    resources/vstxsynth.rc
+    src/gijzelijzer.cpp
+    src/gijzelijzerproc.cpp
+    resources/gijzelijzer.rc
     resources/vstplug.def
     ${VSTSDK_PLUGIN_SOURCE}
 )
@@ -65,7 +65,7 @@ TARGET_LINK_LIBRARIES(gijzelijzer
 #-------------------------------------------------------------------------------
 # Testing
 #-------------------------------------------------------------------------------
-SET(ENABLE_TESTS FALSE CACHE BOOL "Enable to make the tests")
+SET(ENABLE_TESTS TRUE CACHE BOOL "Enable to make the tests")
 
 IF (ENABLE_TESTS)
     LINK_DIRECTORIES(${GTEST_LIB_DIR})
