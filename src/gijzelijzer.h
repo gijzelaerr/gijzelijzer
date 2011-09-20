@@ -1,30 +1,15 @@
-//-------------------------------------------------------------------------------------------------------
-// VST Plug-Ins SDK
-// Version 2.4    	$Date: 2006/11/13 09:08:27 $
-//
-// Category     : VST 2.x SDK Samples
-// Filename     : gijzelijzer.h
-// Created by   : Steinberg Media Technologies
-// Description  : Example Gijzelijzer
-//
-// A simple 2 oscillators test 'synth',
-// Each oscillator has waveform, frequency, and volume
-//
-// *very* basic monophonic 'synth' example. you should not attempt to use this
-// example 'algorithm' to start a serious virtual instrument; it is intended to demonstrate
-// how VstEvents ('MIDI') are handled, but not how a virtual analog synth works.
-// there are numerous much better examples on the web which show how to deal with
-// bandlimited waveforms etc.
-//
-// © 2006, Steinberg Media Technologies, All Rights Reserved
-//-------------------------------------------------------------------------------------------------------
-
 #ifndef __gijzelijzer__
 #define __gijzelijzer__
 
+
 #include "public.sdk/source/vst2.x/audioeffectx.h"
 
-//------------------------------------------------------------------------------------------
+enum
+{
+    kNumFrequencies = 128,    // 128 midi notes
+    kWaveSize = 4096    	// samples (must be power of 2 here)
+};
+
 enum
 {
     // Global
@@ -45,9 +30,7 @@ enum
     kNumParams
 };
 
-//------------------------------------------------------------------------------------------
-// GijzelijzerProgram
-//------------------------------------------------------------------------------------------
+
 class GijzelijzerProgram
 {
 friend class Gijzelijzer;
@@ -68,9 +51,7 @@ private:
     char name[kVstMaxProgNameLen+1];
 };
 
-//------------------------------------------------------------------------------------------
-// Gijzelijzer
-//------------------------------------------------------------------------------------------
+
 class Gijzelijzer : public AudioEffectX
 {
 public:

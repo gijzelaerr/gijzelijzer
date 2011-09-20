@@ -40,7 +40,6 @@ ENDIF()
 #-------------------------------------------------------------------------------
 SET(GIJZELIJZER_SOURCE
     src/gijzelijzer.cpp
-    src/gijzelijzerproc.cpp
     resources/gijzelijzer.rc
     resources/vstplug.def
     ${VSTSDK_PLUGIN_SOURCE}
