@@ -10,19 +10,19 @@ ENDIF()
 #-------------------------------------------------------------------------------
 # Find 3rd party libs
 #-------------------------------------------------------------------------------
+SET(VSTSDK_PATH ${GIJZELIJZER_SOURCE_DIR}/../vstsdk2.4 CACHE PATH "Path to the Steinberg VST SDK")
+SET(VSTSDK_INCLUDE_DIR ${VSTSDK_PATH})
+SET(VSTSDK_PLUGIN_SOURCE
+    ${VSTSDK_PATH}/public.sdk/source/vst2.x/audioeffectx.cpp
+    ${VSTSDK_PATH}/public.sdk/source/vst2.x/audioeffect.cpp
+    ${VSTSDK_PATH}/public.sdk/source/vst2.x/vstplugmain.cpp
+)
+
+SET(VSTSDK_HOST_SOURCE
+    ${VSTSDK_PATH}/pluginterfaces/vst2.x/aeffectx.cpp
+)
+
 IF(WIN32)
-    SET(VSTSDK_PATH ${GIJZELIJZER_SOURCE_DIR}/../vstsdk2.4 CACHE PATH "Path to the Steinberg VST SDK")
-    SET(VSTSDK_INCLUDE_DIR ${VSTSDK_PATH})
-    SET(VSTSDK_PLUGIN_SOURCE
-        ${VSTSDK_PATH}/public.sdk/source/vst2.x/audioeffectx.cpp
-        ${VSTSDK_PATH}/public.sdk/source/vst2.x/audioeffect.cpp
-        ${VSTSDK_PATH}/public.sdk/source/vst2.x/vstplugmain.cpp
-    )
-
-    SET(VSTSDK_HOST_SOURCE
-        ${VSTSDK_PATH}/pluginterfaces/vst2.x/aeffectx.cpp
-    )
-
     SET(GTEST_PATH ${GIJZELIJZER_SOURCE_DIR}/../gtest-1.6.0 CACHE PATH "Path to the Google Test Library")
     SET(GTEST_INCLUDE_DIR ${GTEST_PATH}/include)
     SET(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
