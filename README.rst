@@ -20,7 +20,7 @@ To compile this you need:
  
  * Steinberg VST SDK 2.4:
  
-    http://www.steinberg.net/nc/en/company/developer/sdk_download_portal.html>
+   http://www.steinberg.net/nc/en/company/developer/sdk_download_portal.html
  
 **For Windows**
  
