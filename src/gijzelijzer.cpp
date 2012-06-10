@@ -21,10 +21,11 @@ GijzelijzerProgram::GijzelijzerProgram ()
 Gijzelijzer::Gijzelijzer (audioMasterCallback audioMaster)
 	: AudioEffectX (audioMaster, kNumPrograms, kNumParams)
 {
-    //VstTimeInfo* vstTimeInfo = getTimeInfo();
+    VstTimeInfo* vstTimeInfo = getTimeInfo(kVstTempoValid + kVstTransportPlaying);
 
 	// init
-	size = 44100;
+	size = vstTimeInfo->sampleRate;
+    fTempo = vstTimeInfo->tempo;
 	cursor = 0;
 	delay = 0;
 	buffer = new float[size];
@@ -191,20 +192,19 @@ void Gijzelijzer::processReplacing (float** inputs, float** outputs, VstInt32 sa
 	float* in = inputs[0];
 	float* out1 = outputs[0];
 	float* out2 = outputs[1];
+	float x, y;
+	VstInt32 current = sampleFrames;
 
-	while (--sampleFrames >= 0)
-	{
-		float x = *in++;
-		float y = buffer[cursor];
-        /* buffer[cursor++] = x + y * fFeedBack;
-		if (cursor >= delay)
-            cursor = 0; */
-
-        buffer[cursor--] = x + y * fFeedBack;
-                if (cursor <= 0)
-                    cursor = delay;
+	while (--current >= 0) {
+		x = *in++;
+		y = buffer[cursor];
+        buffer[cursor++] = x + y * fFeedBack;
+		if (cursor >= delay) {
+			cursor = 0;
+		}
 		*out1++ = y;
-		if (out2)
+		if (out2) {
 			*out2++ = y;
+		}
 	}
 }

@@ -30,6 +30,7 @@ public:
 private:	
 	float fDelay;
 	float fFeedBack;
+	float tempo;
 	float fOut;
 	char name[24];
 };
@@ -72,6 +73,7 @@ protected:
 	float fDelay;
 	float fFeedBack;
 	float fOut;
+	float fTempo;
 	
 	long delay;
 	long size;

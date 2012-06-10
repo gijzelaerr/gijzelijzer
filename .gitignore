@@ -1,4 +1,4 @@
-build
+build*
 CMakeLists.txt.user
 gijzelijzer.pro
 gijzelijzer.pro.user
