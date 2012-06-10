@@ -14,22 +14,24 @@ Requirements
 
 To compile this you need:
 
- * CMake::
+ * CMake:
  
-    http://www.cmake.org/
+   http://www.cmake.org/
  
- * Steinberg VST SDK 2.4::
+ * Steinberg VST SDK 2.4:
  
     http://www.steinberg.net/nc/en/company/developer/sdk_download_portal.html>
  
 **For Windows**
  
- * Visual C++. you can download Visual C++ 2010 express for free::
-    http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express
+ * Visual C++. you can download Visual C++ 2010 express for free:
+ 
+   http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express
  
 **For OSX**
 
- * XCode::
+ * XCode:
+ 
    https://developer.apple.com/xcode/
  
  
