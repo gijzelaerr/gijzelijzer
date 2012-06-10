@@ -4,3 +4,4 @@ gijzelijzer.pro
 gijzelijzer.pro.user
 build-qtcreator
 CMakeLists.txt.*
+*.autosave

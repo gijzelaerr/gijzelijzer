@@ -21,6 +21,8 @@ GijzelijzerProgram::GijzelijzerProgram ()
 Gijzelijzer::Gijzelijzer (audioMasterCallback audioMaster)
 	: AudioEffectX (audioMaster, kNumPrograms, kNumParams)
 {
+    //VstTimeInfo* vstTimeInfo = getTimeInfo();
+
 	// init
 	size = 44100;
 	cursor = 0;
